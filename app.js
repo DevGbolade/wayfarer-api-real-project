@@ -1,6 +1,6 @@
 import express from 'express';
 import morgan from 'morgan';
-// import cors from 'cors';
+import cors from 'cors';
 import userRoute from  './api/routes/userRoute';
 // import tripRoute from  './api/routes/tripRoute';
 
@@ -19,9 +19,12 @@ app.use(
   }),
 );
 app.use(`${API_VERSION}`, userRoute);
-app.use(`${API_VERSION}`, tripRoute);
+// app.use(`${API_VERSION}`, tripRoute);
 
 
+app.get('/', (req, res) => {
+  res.status(200).json({ message: 'Welcome to Wayfarer Api' });
+});
 
 app.use('*', (req, res) => {
   res.status(404).json({
