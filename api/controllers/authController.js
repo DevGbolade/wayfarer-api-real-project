@@ -1,5 +1,3 @@
-// import pool from '../models/indexModel';
-// import GeneralUtils from '../utilities/generalUtilities';
 import ResponseGenerator from '../utilities/responseUtilities'
 import UserService from '../services/userServices';
 const response = new ResponseGenerator();
