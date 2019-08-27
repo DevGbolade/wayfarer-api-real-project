@@ -42,7 +42,37 @@ class Userservice {
    * @body {object} a new user object
    */
 
-
+  static async login(req) {
+    try {
+      const foundUser = await User.findUserByEmail(req.body.email);
+      if (foundUser) {
+        const bycrptResponse = GeneralUtils.validate(
+          req.body.password,
+          foundUser.password,
+        );
+        if (bycrptResponse) {
+          const {
+            user_id, first_name, last_name, is_admin, email,
+          } = foundUser;
+          const token = await Auth.signJwt({
+            user_id,
+            is_admin,
+          });
+          return {
+            token,
+            user_id,
+            first_name,
+            last_name,
+            email,
+            is_admin,
+          };
+        }
+      }
+      throw new Error('Invalid credentials');
+    } catch (err) {
+      throw err;
+    }
+  }
 }
 
 export default Userservice;
