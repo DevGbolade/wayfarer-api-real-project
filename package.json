@@ -4,7 +4,7 @@
   "description": "Wayfarer is a public transport booking api ",
   "main": "server.js",
   "scripts": {
-    "lint": "eslint src/ --fix",
+    "lint": "eslint api/ --fix",
     "start": "babel-node server.js",
     "dev": "nodemon --exec babel-node server.js",
     "test": "mocha -r @babel/register api/test/**.test.js --timeout 20000 --exit",
@@ -14,7 +14,7 @@
     "codeclimate-coverage": "codeclimate-test-reporter < lcov.info",
     "coverage": "nyc npm test && npm run generate-lcov && npm run coveralls-coverage && npm run codeclimate-coverage",
     "create": "babel-node api/models/migrations/tableMigrations",
-    "seed": "babel-node src/models/seed.model",
+    "seed": "babel-node api/models/seeder",
     "prepareDB": "npm run createTables && npm run seed",
     "debug": "ndb server.js"
   },

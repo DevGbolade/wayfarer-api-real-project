@@ -29,7 +29,6 @@ class Userservice {
         last_name: newUser.last_name,
         is_admin: newUser.is_admin,
         email: newUser.email,
-        password: newUser.password
 
       };
     } catch (err) {
