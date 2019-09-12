@@ -10,15 +10,16 @@ class AuthController {
    * @memberof UserController
    */
 
-  static async register(req, res) {
+  static async signup(req, res) {
     try {
       const user = await UserService.addUser(req);
       if (user) {
         return response.sendSuccess(
           res,
-          200,
+          201,
           user,
         );
+        
       }
       return response.sendError(res, 500, 'Something went wrong');
     } catch (err) {
@@ -26,9 +27,9 @@ class AuthController {
     }
   }
 
-  static async login(req, res) {
+  static async signin(req, res) {
     try {
-      const user = await UserService.login(req.body);
+      const user = await UserService.login(req);
       if (user) {
         return response.sendSuccess(
           res,

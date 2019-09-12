@@ -73,10 +73,13 @@ class Authentication {
     }
     const token = req.headers.authorization.split(' ')[1];
     const type = req.headers.authorization.split(' ')[0];
+    console.log(type);
+    
     let payload;
     switch (type) {
       case 'Bearer':
         payload = Authentication.bearer(token);
+        console.log(payload);
         break;
       default:
         result.status = 401;
