@@ -30,7 +30,7 @@ const createTables = `
   );
   CREATE TABLE IF NOT EXISTS
   trips(
-    trip_id SERIAL PRIMARY KEY,
+    trip_id SERIAL PRIMARY KEY, 
     bus_id INTEGER NOT NULL,
     origin VARCHAR(150) NOT NULL ,
     destination VARCHAR(150) NOT NULL,
