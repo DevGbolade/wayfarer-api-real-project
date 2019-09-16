@@ -1,5 +1,5 @@
 /* eslint-disable camelcase */
-import BusModel from '../models/busesModel';
+import BusModel from '../models/busModel';
 
 const Bus = new BusModel('buses');
 
