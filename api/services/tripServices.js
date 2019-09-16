@@ -1,6 +1,6 @@
 /* eslint-disable camelcase */
 import TripModel from '../models/tripModel';
-import BusModel from '../models/busesModel';
+import BusModel from '../models/busModel';
 
 const Bus = new BusModel('buses');
 const Trip = new TripModel('trips');
