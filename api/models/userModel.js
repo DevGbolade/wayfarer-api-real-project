@@ -31,6 +31,24 @@ class User extends Query {
       throw err;
     }
   }
+
+  async findAllUsers() {
+    try {
+      const { rows } = await this.findAll('*');
+      return rows;
+    } catch (err) {
+      throw err;
+    }
+  }
+
+  async deleteAllUsers() {
+    try {
+      const { rows } = await this.deleteAll('users');
+      return rows;
+    } catch (err) {
+      throw err;
+    }
+  }
 }
 
 export default User;

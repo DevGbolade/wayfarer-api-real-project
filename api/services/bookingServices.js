@@ -44,6 +44,7 @@ class Bookingservice {
 
   static async getBookings(req) {
     try {
+      
       if (req.is_admin) {
         const allBookings = await Booking.findAllBookings();
         return allBookings;

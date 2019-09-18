@@ -91,7 +91,7 @@ const makeBookingSchema = Joi.object({
 });
 
 export default {
-  '/auth/signup': createUserSchema,
+  '/auth/signup': createAdminSchema,
   '/auth/signin': signinUserSchema,
   '/trips': createTripSchema,
   '/buses': addBusSchema,

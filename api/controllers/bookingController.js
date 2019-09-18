@@ -26,6 +26,7 @@ class BookingController {
   static async getAll(req, res) {
     try {
       const booking = await BookingService.getBookings(req);
+      
       if (booking) {
         return response.sendSuccess(res, 200, booking);
       }

@@ -72,6 +72,26 @@ class Userservice {
       throw err;
     }
   }
+
+  static async getAllUsers(){
+    try {
+      const allUsers = await User.findAllUsers();
+      return allUsers;
+    } catch (err) {
+      throw err;
+    }
+  }
+
+  static async deleteAllUsers(){
+    try {
+      return await User.deleteAllUsers();
+      
+    } catch (err) {
+      throw err;
+    }
+  }
+
 }
+
 
 export default Userservice;

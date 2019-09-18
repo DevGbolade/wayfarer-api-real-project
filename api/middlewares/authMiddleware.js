@@ -79,7 +79,6 @@ class Authentication {
     switch (type) {
       case 'Bearer':
         payload = Authentication.bearer(token);
-        console.log(payload);
         break;
       default:
         result.status = 401;

@@ -11,9 +11,9 @@ router
   .route('/buses')
   .post(
     [auth.authenticate, auth.isAdmin, bodyValidation],
-    busControllerl.addBus,
+    busController.addBus,
   )
-  .get('/buses', [auth.authenticate], busController.getAll);
+  .get([auth.authenticate], busController.getAll);
 
 router
 .get('/buses/:bus_id', [auth.authenticate, paramValidation], busController.getOne);

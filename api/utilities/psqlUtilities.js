@@ -20,6 +20,20 @@ export default class Query {
     }
   }
 
+   /**
+   * delete all documents in a table
+   * @param {param}
+   */
+  async deleteAll(selector) {
+    const query = `TRUNCATE ONLY ${selector} FROM ${this.table}`;
+    try {
+      const response = await this.pool.query(query);
+      return response;
+    } catch (err) {
+      throw err;
+    }
+  }
+
   /**
    * Find a specific document by a param
    * @param {param}

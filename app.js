@@ -3,6 +3,9 @@ import morgan from 'morgan';
 import cors from 'cors';
 import userRoute from  './api/routes/userRoute';
 import tripRoute from  './api/routes/tripRoute';
+import bookingRoute from  './api/routes/bookingRoute';
+import busRoute from  './api/routes/busRoute';
+
 
 
 
@@ -20,6 +23,10 @@ app.use(
 );
 app.use(`${API_VERSION}`, userRoute);
 app.use(`${API_VERSION}`, tripRoute);
+app.use(`${API_VERSION}`, busRoute);
+app.use(`${API_VERSION}`, bookingRoute);
+
+
 
 
 // app.get('/', (req, res) => {

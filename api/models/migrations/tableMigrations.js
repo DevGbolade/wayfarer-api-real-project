@@ -77,5 +77,6 @@ async function create() {
   await pool.query(createTables);
   console.log('Creating Tables...');
   pool.end();
+  process.exit()
 }
 create();
