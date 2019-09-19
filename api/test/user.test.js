@@ -9,9 +9,9 @@ chai.should();
 
 
 const newUser = {
-  email: 'okabamac33@gmail.com',
-  first_name: 'Mac',
-  last_name: 'Okaba',
+  email: 'raxqy5@gmail.com',
+  first_name: 'Agbolade',
+  last_name: 'Adeniyi',
   password: 'password',
   confirm_password: 'password',
   is_admin: false,
@@ -72,8 +72,8 @@ describe('Test user signup and login', () => {
     });
     it('it should throw error because of missing first name', (done) => {
       const badRequest = {
-        email: 'okabamac@gmail.com',
-        last_name: 'Okaba',
+        email: 'raadeniyi3@gmail.com',
+        last_name: 'Adeniyi',
         password: 'password',
         confirm_password: 'password',
         is_admin: false,
@@ -91,8 +91,8 @@ describe('Test user signup and login', () => {
     });
     it('it should throw error because of missing last name', (done) => {
       const badRequest = {
-        email: 'okabamac@gmail.com',
-        first_name: 'Okaba',
+        email: 'raadeniyi3@gmail.com',
+        first_name: 'Agbolade',
         password: 'password',
         confirm_password: 'password',
         is_admin: false,
@@ -110,8 +110,8 @@ describe('Test user signup and login', () => {
     });
     it('it should throw error because of missing email', (done) => {
       const badRequest = {
-        first_name: 'Mac',
-        last_name: 'Okaba',
+        first_name: 'Agbolade',
+        last_name: 'Adeniyi',
         password: 'password',
         confirm_password: 'password',
         is_admin: false,
@@ -129,9 +129,9 @@ describe('Test user signup and login', () => {
     });
     it('it should throw error because of wrong email type', (done) => {
       const badRequest = {
-        email: 'macc77',
-        first_name: 'Mac',
-        last_name: 'Okaba',
+        email: 'raadeniyi3',
+        first_name: 'Agbolade',
+        last_name: 'Adeniyi',
         password: 'password',
         confirm_password: 'password',
         is_admin: false,
@@ -151,9 +151,9 @@ describe('Test user signup and login', () => {
     });
     it('it should throw error because of short password', (done) => {
       const badRequest = {
-        email: 'macokab@gmail.com',
-        first_name: 'Mac',
-        last_name: 'Okaba',
+        email: 'raadeniyi3@gmail.com',
+        first_name: 'Agbolade',
+        last_name: 'Adeniyi',
         password: 'pass',
         confirm_password: 'pass',
         is_admin: false,
@@ -175,8 +175,9 @@ describe('Test user signup and login', () => {
     });
     it('it should throw error because of missing password', (done) => {
       const badRequest = {
-        first_name: 'Mac',
-        last_name: 'Okaba',
+        first_name: 'Agbolade',
+        email: 'raadeniyi3@gmail.com',
+        last_name: 'Adeniyi',
         confirm_password: 'password',
         is_admin: false,
       };
@@ -195,8 +196,9 @@ describe('Test user signup and login', () => {
     });
     it('it should throw error because of missing confirm password', (done) => {
       const badRequest = {
-        first_name: 'Mac',
-        last_name: 'Okaba',
+        first_name: 'Agbolade',
+        last_name: 'Adeniyi',
+        email: 'raadeniyi3@gmail.com',
         password: 'password',
         is_admin: false,
       };
@@ -215,8 +217,8 @@ describe('Test user signup and login', () => {
     });
     it('it should signin a user', (done) => {
       const payload = {
-        password: 'password',
-        email: 'okabamac@gmail.com',
+        email: 'raadeniyi3@gmail.com',
+        password: '123456'
       };
       chai
         .request(app)
@@ -239,7 +241,7 @@ describe('Test user signup and login', () => {
     it('it should throw error because of wrong email', (done) => {
       const payload = {
         password: 'password',
-        email: 'okabamac1.56998@gmail.com',
+        email: 'raadeniyi@gmail.com',
       };
       chai
         .request(app)
@@ -256,8 +258,8 @@ describe('Test user signup and login', () => {
     });
     it('it should throw error because of wrong password', (done) => {
       const payload = {
-        password: 'password123333333',
-        email: 'okabamac@gmail.com',
+        password: 'password123',
+        email: 'raadeniyi3@gmail.com',
       };
       chai
         .request(app)
@@ -274,8 +276,8 @@ describe('Test user signup and login', () => {
     });
     it('it should throw error because of params not valid', (done) => {
       const payload = {
-        password: 'password123333333',
-        email: 'okabamac@gmail.com',
+        password: 'password1',
+        email: 'raadeniyi3@gmail.com',
       };
       chai
         .request(app)
