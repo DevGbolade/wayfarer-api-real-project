@@ -17,9 +17,9 @@ const pool = new Pool({
   // ssl: true
 });
 
-const pool = new Pool({
-  connectionString: psqlUrl
-});
+// const pool = new Pool({
+//   connectionString: psqlUrl
+// });
 
 pool.on('error', (err, client) => {
   console.error('Unexpected error on idle client', err);
