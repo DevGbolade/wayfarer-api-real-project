@@ -2,9 +2,20 @@ import dotenv from 'dotenv';
 import { Pool, Client } from 'pg';
 
 import keys from '../utilities/configUtilities';
+dotenv.config({ path: './config.env'});
 
-const { psqlUrl, psqlTest } = keys;
-dotenv.config();
+const {
+  psqlUrl,
+  psqlTest,
+  travisDb
+} = keys;
+
+
+
+const pool = new Pool({
+  connectionString: process.env.NODE_ENV === 'test' ? travisDb : psqlUrl
+  // ssl: true
+});
 
 const pool = new Pool({
   connectionString: psqlUrl

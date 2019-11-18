@@ -1,4 +1,3 @@
-// import http from 'http';
 import app from './app';
 import keys from './api/utilities/configUtilities';
 import dotenv from 'dotenv';
@@ -10,13 +9,15 @@ const {
   port,
   secret,
   psqlUrl,
-  psqlTest
+  psqlTest,
+  psqlHeroku
 } = keys;
 
 
 
 const pool = new Pool({
-  connectionString: process.env.NODE_ENV === 'test' ? psqlTest : psqlUrl,
+  connectionString: process.env.NODE_ENV === 'test' ? psqlTest : psqlUrl
+  // ssl: true
 });
 
 pool.connect()

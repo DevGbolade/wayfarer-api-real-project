@@ -6,7 +6,7 @@
   "scripts": {
     "lint": "eslint api/ --fix",
     "start": "babel-node server.js",
-    "start:dev": "nodemon --exec babel-node server.js",
+    "dev": "nodemon --exec babel-node server.js",
     "test": "set NODE_ENV=test&& npm run prepareDB && nyc --require @babel/register ---reporter=html --reporter=text mocha api/test/**.test.js --timeout 20000 --exit",
     "generate-lcov": "nyc report --reporter=text-lcov > lcov.info",
     "coveralls-coverage": "coveralls < lcov.info",
