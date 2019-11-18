@@ -4,7 +4,7 @@ import keys from '../../utilities/configUtilities';
 
 dotenv.config();
 
-const {psqlUrl, psqlTest } = keys;
+const {psqlUrl, psqlTest, travisDb } = keys;
 
 const createTables = `
   DROP TABLE IF EXISTS bookings, trips, buses, users CASCADE;
@@ -65,7 +65,7 @@ const createTables = `
 
 dotenv.config();
 const pool = new Pool({
-  connectionString: process.env.NODE_ENV === 'test' ? psqlTest : psqlUrl,
+  connectionString: process.env.NODE_ENV === 'test' ? travisDb : psqlUrl
 })
 
 pool.connect()
